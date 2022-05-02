@@ -1,0 +1,14 @@
+program : block
+
+block : statement
+      | statement block
+
+statement : NAME = expr ;
+          | expr ;
+
+expr : expr + expr
+     | expr - expr
+     | expr * expr
+     | expr / expr
+     | ( expr )
+     | NUMBER

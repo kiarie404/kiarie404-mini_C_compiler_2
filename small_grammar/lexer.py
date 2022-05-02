@@ -5,7 +5,7 @@ from sly import Lexer
 
 class CalcLexer(Lexer):
     # Set of reserved names (language keywords)
-    reserved_words = { 'WHILE', 'IF', 'ELSE', 'PRINT' }
+    reserved_words = { 'WHILE', 'IF', 'ELSE', 'PRINT' } 
 
     # Set of token names.   This is always required
     tokens = {

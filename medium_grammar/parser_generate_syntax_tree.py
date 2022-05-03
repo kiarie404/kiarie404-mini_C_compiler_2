@@ -314,7 +314,7 @@ def find_column(text, token):
     return column
 
 def get_an_array_of_all_tokens(p):
-    array = ()
+    array = []
     for token in p:
         array.append(token)
     return array

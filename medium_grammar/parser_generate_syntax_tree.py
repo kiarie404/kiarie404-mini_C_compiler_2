@@ -34,7 +34,8 @@ class CalcParser(Parser):
 
     # <parameter_list> ::= <parameter> comma_delimiter <parameter_list>
     #     	          | <parameter>
-    @_('parameter "," parameter_list')
+    @_('parameter "," parameter_list',
+       'parameter')
     def parameter_list(self, p):
         return get_an_array_of_all_tokens(p)
 

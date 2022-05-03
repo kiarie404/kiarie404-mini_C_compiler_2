@@ -5,8 +5,8 @@
 int main(){
  // showing declarations
  int an_int = 34;
- int num ;     // integers without immediate initialization are assigned the value 0 by default
- num = 10;
+ int nums;     // integers without immediate initialization are assigned the value 0 by default
+ nums = 10;
  float a_float = 34.78; // floats without immediate initialization are assigned the value 0 by default
  float f ;
  f = 2.5;

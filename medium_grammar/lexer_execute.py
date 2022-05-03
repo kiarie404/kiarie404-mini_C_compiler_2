@@ -20,14 +20,19 @@ class CalcLexer(Lexer):
 
     # literals
     # we have chosen to use literals for the sake of readability
-    literals = { '+', '-', '*', '%', '/', '=', '(', ')', '{', '}', ';', ',' }
+
 
 
     # Regular expression rules for tokens
     FLOAT_CONSTANT = r'\d*\.{1}\d+'
     INT_CONSTANT  = r'\d+'
     BOOL_CONSTANT = r'(true|TRUE|false|FALSE)'
-
+    ADD    = r'\+'
+    MINUS   = r'-'
+    TIMES   = r'\*'
+    MODULUS = r'%'
+    DIVIDE  = r'/'
+    ASSIGN  = r'='
     EQUIVALENT_TO = r'=='
     LESS_OR_EQUAL = r'<='
     LESS_THAN = r'<'

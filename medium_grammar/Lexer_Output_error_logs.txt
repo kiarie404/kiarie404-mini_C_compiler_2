@@ -1,0 +1,2 @@
+Grammatical Error in line 24 , column 35 ---> Character :  $ 
+Grammatical Error in line 24 , column 36 ---> Character :  # 

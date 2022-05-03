@@ -42,6 +42,12 @@ class CalcLexer(Lexer):
     LOGICAL_NOT = r'!'
     LOGICAL_OR = r'\|\|'
     LOGICAL_AND = r'&&'
+    LPAREN  = r'\('
+    RPAREN  = r'\)'
+    LCURLY = r'\{'
+    RCURLY = r'\}'
+    SCOLON = ';'
+    COMMA = ','
 
 
     # Tokens for keywords

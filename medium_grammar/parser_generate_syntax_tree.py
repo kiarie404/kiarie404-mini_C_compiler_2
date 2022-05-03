@@ -1,3 +1,4 @@
+import json
 from lexer_execute import CalcLexer
 from sly import Parser, Lexer
 
@@ -16,6 +17,7 @@ class CalcParser(Parser):
 
     @_('function_definition')
     def program(self, p):
+        print("Found program")
         with open("parse_tree.json", "w") as target_file:
             json.dump(p.function_definition, target_file, indent=4)
 
@@ -34,7 +36,7 @@ class CalcParser(Parser):
 
     # <parameter_list> ::= <parameter> comma_delimiter <parameter_list>
     #     	          | <parameter>
-    @_('parameter "," parameter_list',
+    @_('parameter COMMA parameter_list',
        'parameter')
     def parameter_list(self, p):
         return p[0]
@@ -106,8 +108,8 @@ class CalcParser(Parser):
 
     # <expression_statement> ::= <expression> semi_colon_delimiter
     #                	    | semi_colon_delimiter
-    @_('expression ";"',
-       '";"')
+    @_('expression SCOLON',
+       'SCOLON')
     def expression_statement(self, p):
         return {"expression_statement" : p[0]}
 
@@ -125,20 +127,20 @@ class CalcParser(Parser):
 
     # <return_stmt> ::= key_word_return semi_colon_delimiter
     #             | key_word_return <expression> semi_colon_delimiter
-    @_('RETURN_KEYWORD ";"',
-       'RETURN_KEYWORD expression ";"')
+    @_('RETURN_KEYWORD SCOLON',
+       'RETURN_KEYWORD expression SCOLON')
     def return_stmt(self, p):
         return {"return_stmt" : p[0] }
 
     # <break_stmt>  ::= key_word_break semi_colon_delimiter
-    @_('BREAK_KEYWORD ";"')
+    @_('BREAK_KEYWORD SCOLON')
     def break_stmt(self, p):
         return {"break_stmt" : p[0]}
 
     # <variable_declaration> ::= <type_specifier> <identifier> semi_colon_delimiter
     #                     |  <type_specifier> <identifier> assignment_operator <expression> semi_colon_delimiter
-    @_('type_specifier identifier ";"',
-       'type_specifier identifier ASSIGN expression ";"')
+    @_('type_specifier identifier SCOLON',
+       'type_specifier identifier ASSIGN expression SCOLON')
     def variable_declaration(self, p):
         return {"variable_declaration" : p[0]}
 
@@ -226,7 +228,7 @@ class CalcParser(Parser):
             with open("Test.c", "r") as src_file:
                 text = src_file.read()
                 column = find_column(text, token)
-                print("Syntax Error : at line ", token.lineno, " column : ", column, " ---> offending token value : ", token.value)
+                print("Syntax Error : at line ", token.lineno, " column : ", column, " ---> offending token value : ", token.value[0])
 
 
 #  miscellaneous helper functions

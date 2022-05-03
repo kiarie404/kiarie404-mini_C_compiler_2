@@ -20,10 +20,10 @@ int main(){
  // boolean operations
  // relational boolean operations
  bool comparison = 2 < 4 ; // returns true
- bool comparison2 = 2 > an_int ; // false
- // logical boolean operations
- bool comparison3 = comparison &&  comparison2;
- bool comparison4 = (comparison && comparison2) || !(2 == 3);
+ bool comparison2 = 2 || an_int ; // false
+
+ bool comparison3 = comparison ||   comparison2;
+ bool comparison4 = (comparison && comparison2) $ || !(2 == 3);
 
  // demonstrating loops
  int count = 2;

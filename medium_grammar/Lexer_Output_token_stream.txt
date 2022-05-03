@@ -2,24 +2,25 @@
 
 
 
-<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'main'	<'LPAREN'> --> '('	<'RPAREN'> --> ')'	<'LCURLY'> --> '{'	
+<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'main'	<'('> --> '('	<')'> --> ')'	<'{'> --> '{'	
 
-<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'an_int'	<'ASSIGN'> --> '='	<'INT_CONSTANT'> --> '34'	<'SCOLON'> --> ';'	
-<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'num'	<'SCOLON'> --> ';'	
-<'IDENTIFIER'> --> 'num'	<'ASSIGN'> --> '='	<'INT_CONSTANT'> --> '10'	<'SCOLON'> --> ';'	
-<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'a_float'	<'ASSIGN'> --> '='	<'FLOAT_CONSTANT'> --> '34.78'	<'SCOLON'> --> ';'	
-<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'f'	<'SCOLON'> --> ';'	
-<'IDENTIFIER'> --> 'f'	<'ASSIGN'> --> '='	<'FLOAT_CONSTANT'> --> '2.5'	<'SCOLON'> --> ';'	
-<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'a_bool'	<'ASSIGN'> --> '='	<'BOOL_CONSTANT'> --> 'true'	<'SCOLON'> --> ';'	
-
-
-
-<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'some_value'	<'ASSIGN'> --> '='	<'IDENTIFIER'> --> 'an_int'	<'TIMES'> --> '*'	<'IDENTIFIER'> --> 'a_float'	<'PLUS'> --> '+'	<'LPAREN'> --> '('	<'INT_CONSTANT'> --> '32'	<'MODULUS'> --> '%'	<'INT_CONSTANT'> --> '8'	<'RPAREN'> --> ')'	<'DIVIDE'> --> '/'	<'FLOAT_CONSTANT'> --> '10.9'	<'SCOLON'> --> ';'	
-<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'another_value'	<'ASSIGN'> --> '='	<'IDENTIFIER'> --> 'some_value'	<'ASSIGN'> --> '='	<'INT_CONSTANT'> --> '10'	<'SCOLON'> --> ';'	
+<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'an_int'	<'='> --> '='	<'INT_CONSTANT'> --> '34'	<';'> --> ';'	
+<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'num'	<';'> --> ';'	
+<'IDENTIFIER'> --> 'num'	<'='> --> '='	<'INT_CONSTANT'> --> '10'	<';'> --> ';'	
+<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'a_float'	<'='> --> '='	<'FLOAT_CONSTANT'> --> '34.78'	<';'> --> ';'	
+<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'f'	<';'> --> ';'	
+<'IDENTIFIER'> --> 'f'	<'='> --> '='	<'FLOAT_CONSTANT'> --> '2.5'	<';'> --> ';'	
+<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'a_bool'	<'='> --> '='	<'BOOL_CONSTANT'> --> 'true'	<';'> --> ';'	
 
 
 
-<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison'	<'ASSIGN'> --> '='	<'INT_CONSTANT'> --> '2'	<'LESS_THAN'> --> '<'	<'INT_CONSTANT'> --> '4'	<'SCOLON'> --> ';'	
-<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison2'	<'ASSIGN'> --> '='	<'INT_CONSTANT'> --> '2'	<'GREATER_THAN'> --> '>'	<'IDENTIFIER'> --> 'an_int'	<'SCOLON'> --> ';'	
+<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'some_value'	<'='> --> '='	<'IDENTIFIER'> --> 'an_int'	<'*'> --> '*'	<'IDENTIFIER'> --> 'a_float'	<'+'> --> '+'	<'('> --> '('	<'INT_CONSTANT'> --> '32'	<'%'> --> '%'	<'INT_CONSTANT'> --> '8'	<')'> --> ')'	<'/'> --> '/'	<'FLOAT_CONSTANT'> --> '10.9'	<';'> --> ';'	
+<'FLOAT_KEYWORD'> --> 'float'	<'IDENTIFIER'> --> 'another_value'	<'='> --> '='	<'IDENTIFIER'> --> 'some_value'	<'='> --> '='	<'INT_CONSTANT'> --> '10'	<';'> --> ';'	
 
-<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison3'	<'ASSIGN'> --> '='	<'IDENTIFIER'> --> 'comparison'	<'LOGICAL_AND'> --> '&&'	<'ERROR'> --> '$#  comparison2;\n'	<'ERROR'> --> '#  comparison2;\n'	<'IDENTIFIER'> --> 'comparison2'	<'SCOLON'> --> ';'	
+
+
+<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison'	<'='> --> '='	<'INT_CONSTANT'> --> '2'	<'LESS_THAN'> --> '<'	<'INT_CONSTANT'> --> '4'	<';'> --> ';'	
+<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison2'	<'='> --> '='	<'INT_CONSTANT'> --> '2'	<'LOGICAL_OR'> --> '||'	<'IDENTIFIER'> --> 'an_int'	<';'> --> ';'	
+
+<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison3'	<'='> --> '='	<'IDENTIFIER'> --> 'comparison'	<'LOGICAL_OR'> --> '||'	<'IDENTIFIER'> --> 'comparison2'	<';'> --> ';'	
+<'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison4'	<'='> --> '='	<'('> --> '('	<'IDENTIFIER'> --> 'comparison'	<'LOGICAL_AND'> --> '&&'	<'IDENTIFIER'> --> 'comparison2'	<')'> --> ')'	<'ERROR'> --> '$ || !(2 == 3);\n'	<'LOGICAL_OR'> --> '||'	<'LOGICAL_NOT'> --> '!'	<'('> --> '('	<'INT_CONSTANT'> --> '2'	<'EQUIVALENT_TO'> --> '=='	<'INT_CONSTANT'> --> '3'	<')'> --> ')'	<';'> --> ';'	

@@ -1,3 +1,5 @@
+<program> ::= <function_definition> # we will fix this later, let us work with main() function only for now
+
 <function_definition> ::= <type_specifier> <identifier> left_rounded_bracket <function_parameters> right_rounded_bracket <compound_statement>
                         | <type_specifier> <identifier> left_rounded_bracket  right_rounded_bracket <compound_statement>   # made function accept NULL as a parameter safely
 
@@ -26,7 +28,7 @@
 
 <if_else_variant_stmt>  ::= key_word_if left_rounded_bracket <boolean_expression> right_rounded_bracket <compound_statement>
                          |  key_word_if left_rounded_bracket <boolean_expression> right_rounded_bracket <compound_statement> key_word_else <compound_statement>
-                         
+
 <non_if_else_variant_stmt> ::= <expression_statement>
   	            | <compound_statement>   ?????
                 | <iteration_statement>

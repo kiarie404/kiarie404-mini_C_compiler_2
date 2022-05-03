@@ -24,3 +24,19 @@
 
 <'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison3'	<'='> --> '='	<'IDENTIFIER'> --> 'comparison'	<'LOGICAL_OR'> --> '||'	<'IDENTIFIER'> --> 'comparison2'	<';'> --> ';'	
 <'BOOL_KEYWORD'> --> 'bool'	<'IDENTIFIER'> --> 'comparison4'	<'='> --> '='	<'('> --> '('	<'IDENTIFIER'> --> 'comparison'	<'LOGICAL_AND'> --> '&&'	<'IDENTIFIER'> --> 'comparison2'	<')'> --> ')'	<'ERROR'> --> '$ || !(2 == 3);\n'	<'LOGICAL_OR'> --> '||'	<'LOGICAL_NOT'> --> '!'	<'('> --> '('	<'INT_CONSTANT'> --> '2'	<'EQUIVALENT_TO'> --> '=='	<'INT_CONSTANT'> --> '3'	<')'> --> ')'	<';'> --> ';'	
+
+<'INT_KEYWORD'> --> 'int'	<'IDENTIFIER'> --> 'count'	<'='> --> '='	<'INT_CONSTANT'> --> '2'	<';'> --> ';'	
+
+<'IDENTIFIER'> --> 'num'	<'='> --> '='	<'INT_CONSTANT'> --> '12'	<';'> --> ';'	
+<'WHILE_KEYWORD'> --> 'while'	<'('> --> '('	<'IDENTIFIER'> --> 'count'	<'LESS_OR_EQUAL'> --> '<='	<'IDENTIFIER'> --> 'num'	<')'> --> ')'	<'{'> --> '{'	
+
+<'IF_KEYWORD'> --> 'if'	<'('> --> '('	<'IDENTIFIER'> --> 'count'	<'EQUIVALENT_TO'> --> '=='	<'IDENTIFIER'> --> 'num'	<')'> --> ')'	<'{'> --> '{'	<'BREAK_KEYWORD'> --> 'break'	<';'> --> ';'	<'}'> --> '}'	
+
+<'IF_KEYWORD'> --> 'if'	<'('> --> '('	<'('> --> '('	<'IDENTIFIER'> --> 'num'	<'%'> --> '%'	<'IDENTIFIER'> --> 'count'	<')'> --> ')'	<'EQUIVALENT_TO'> --> '=='	<'INT_CONSTANT'> --> '0'	<')'> --> ')'	<'{'> --> '{'	
+<'RETURN_KEYWORD'> --> 'return'	<'BOOL_CONSTANT'> --> 'false'	<';'> --> ';'	
+<'}'> --> '}'	
+<'ELSE_KEYWORD'> --> 'else'	<'{'> --> '{'	
+<'IDENTIFIER'> --> 'count'	<'+'> --> '+'	<'+'> --> '+'	<';'> --> ';'	
+<'}'> --> '}'	
+<'}'> --> '}'	
+<'}'> --> '}'	

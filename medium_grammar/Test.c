@@ -24,7 +24,6 @@ int main(){
 
  bool comparison3 = comparison ||   comparison2;
  bool comparison4 = (comparison && comparison2) $ || !(2 == 3);
-
  // demonstrating loops
  int count = 2;
  // int num = 12;   // semantic error - "redeclaration of a variable within the same scope"

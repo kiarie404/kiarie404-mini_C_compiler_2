@@ -1,0 +1,7 @@
+- [ ] Variable Scopes
+     - [ ] re-declaration of a variable within a single scope.
+     - [ ] re-declaration of a variable within different Scopes.
+     - [ ] re-definition of a variable within a single scope.
+     - [ ] re-definition of a variable within different Scopes.
+- [ ] Arithmetic executions
+- [ ]

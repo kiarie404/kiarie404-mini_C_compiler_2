@@ -6,7 +6,7 @@ import json
 
 class CalcLexer(Lexer):
     tokens = { IDENTIFIER, RETURN_KEYWORD, VOID_KEYWORD, BOOL_KEYWORD, FLOAT_KEYWORD, INT_KEYWORD,
-               IF, ELSE, WHILE, BREAK,
+               IF_KEYWORD, ELSE_KEYWORD, WHILE_KEYWORD, BREAK_KEYWORD,
                FLOAT_CONSTANT, INT_CONSTANT, BOOL_CONSTANT,
                ADD, MINUS, TIMES, MODULUS, DIVIDE, ASSIGN,
                EQUIVALENT_TO, LESS_OR_EQUAL, LESS_THAN, GREATER_OR_EQUAL, GREATER_THAN, INEQUIVALENT_TO,
@@ -46,10 +46,10 @@ class CalcLexer(Lexer):
     IDENTIFIER['bool'] = BOOL_KEYWORD
     IDENTIFIER['float'] = FLOAT_KEYWORD
     IDENTIFIER['int'] = INT_KEYWORD
-    IDENTIFIER['if'] = IF
-    IDENTIFIER['else'] = ELSE
-    IDENTIFIER['while'] = WHILE
-    IDENTIFIER['break'] = BREAK
+    IDENTIFIER['if'] = IF_KEYWORD
+    IDENTIFIER['else'] = ELSE_KEYWORD
+    IDENTIFIER['while'] = WHILE_KEYWORD
+    IDENTIFIER['break'] = BREAK_KEYWORD
 
     # Line number tracking
     @_(r'\n+')
@@ -95,7 +95,9 @@ for line_index, line in enumerate(src_file):
 
         # we handle record the lexer Errors :
         if (token.type == "ERROR"):
-            text = src_file.read()
+            text = ""
+            with open("Test.c") as src:
+                text = src.read()
             token_column = find_column(text, token)
             # write the error to the the error output file.
             with open("Lexer_Output_error_logs.txt","a") as error_out_file:

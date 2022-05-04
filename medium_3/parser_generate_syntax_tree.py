@@ -230,7 +230,8 @@ class CalcParser(Parser):
             with open("Test.c", "r") as src_file:
                 text = src_file.read()
                 column = find_column(text, p)
-                print("Syntax Error : at line ", p.lineno, " column : ", column, " ---> offending token value : ", p.value[0])
+                syntax_error_msg = "Syntax Error at line {} column {} ----> offending word : {}".format(p.lineno, column, p.value[0])
+                print(syntax_error_msg)
 
 
 #  miscellaneous helper functions

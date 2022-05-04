@@ -74,7 +74,12 @@ class CalcLexer(Lexer):
 
     @_(r'\d*\.{1}\d+')
     def FLOAT_CONSTANT(self, t):
-        t.value = int(t.value)
+        t.value = float(t.value)
+        return t
+
+    @_(r'(true|TRUE|false|FALSE)')
+    def BOOL_CONSTANT(self, t):
+        t.value = bool(t.value)
         return t
 
     def error(self, t):

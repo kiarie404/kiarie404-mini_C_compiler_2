@@ -1,0 +1,80 @@
+[
+    [
+        "int"
+    ],
+    [
+        "main"
+    ],
+    "(",
+    ")",
+    [
+        "{",
+        [
+            [
+                {
+                    "non_if_else_variant_stmt": [
+                        {
+                            "variable_declaration": [
+                                [
+                                    "int"
+                                ],
+                                [
+                                    "num"
+                                ],
+                                "=",
+                                {
+                                    "expression": [
+                                        {
+                                            "arithmetic_expression": [
+                                                {
+                                                    "number": [
+                                                        10
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                ";"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [
+                [
+                    {
+                        "non_if_else_variant_stmt": [
+                            {
+                                "variable_declaration": [
+                                    [
+                                        "int"
+                                    ],
+                                    [
+                                        "moon"
+                                    ],
+                                    "=",
+                                    {
+                                        "expression": [
+                                            {
+                                                "arithmetic_expression": [
+                                                    {
+                                                        "number": [
+                                                            20
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    ";"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ]
+        ],
+        "}"
+    ]
+]

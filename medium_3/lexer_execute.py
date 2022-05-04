@@ -123,8 +123,9 @@ for line_index, line in enumerate(src_file):
             # write the error to the the error output file.
             with open("Lexer_Output_error_logs.txt","a") as error_out_file:
                 # we write line_index+1 because the array un-intuitively began at 0 instead of 1-- humans count lines from 1...not zero
-                error_msg = "Grammatical Error in line {} , column {} ---> Character :  {} \n".format(line_index+1, token_column, token.value[0])
+                error_msg = "Lexical Error in line {} , column {} ---> Character :  {} \n".format(line_index+1, token_column, token.value[0])
                 error_out_file.write(error_msg)
+                print(error_msg)  # print to screen
 
 
     # make the file pointer in the .txt output skip to a new line

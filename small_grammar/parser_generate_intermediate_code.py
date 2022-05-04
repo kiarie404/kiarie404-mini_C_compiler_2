@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# calc.py 
+# calc.py
 # -----------------------------------------------------------------------------
 
 import json
@@ -191,6 +191,7 @@ class CalcParser(Parser):
             src_file = open("Test.c", "r")
             text = src_file.read()
             column = find_column(text, token)
+            line = find_line(text, token)
             print("Syntax Error : at line ", token.lineno, " column : ", column, " ---> offending token value : ", token.value)
 
 #  miscellaneous helper functions
@@ -204,6 +205,17 @@ def find_column(text, token):
     column = (token.index - last_cr) + 1
     return column
 
+#  miscellaneous helper functions
+# Find a token's column position.
+#     input is the input text string
+#     token is a token instance
+def find_line(text, token):
+    last_cr = text.rfind('\n', 0, token.index)
+    if last_cr < 0:
+        last_cr = 0
+    column = (token.index - last_cr) + 1
+    return column
+
 # this function generates new Computer generated variable names
 # the names are in the format : T-0, T-1, T-2 ... and so on
 class Name_generator():
@@ -211,7 +223,7 @@ class Name_generator():
     def __init__(self):
         self.segment_one = "T-"  # segment one of the new Computer Generated name.
         self.current_index = 0    # This is the index of the current new name. It begins at zero by default
-
+ 
     def generate_new_name(self):
         new_name = self.segment_one + str(self.current_index)
         self.current_index = self.current_index + 1
